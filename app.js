@@ -1,21 +1,19 @@
 const express = require('express');
 const dotenv = require('dotenv');
-const res = require('express/lib/response');
 dotenv.config({ path: './config.env' });
 const app = express();
 
-app.get('hallo', async() => {
-    try {
-        res.send({
-            massage: 'hallo from backend server',
-        });
-    } catch (err) {
-        console.log(err);
-        res.send({ err });
-    }
+const swaggerUI = require('swagger-ui-express');
+const YAML = require('yamljs');
+const swaggerJsDoc = YAML.load('./api.yml');
+
+app.get('/hallo/', (req, res) => {
+    res.send('hallo from backend server');
 });
 
 port = process.env.PORT || 8000;
-const server = app.listen(port, () => {
+app.listen(port, () => {
     console.log(`Server is running on port ${port}...`);
 });
+
+app.use('/', swaggerUI.serve, swaggerUI.setup(swaggerJsDoc));
