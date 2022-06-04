@@ -1,0 +1,25 @@
+{
+    "name": "hallo",
+    "version": "1.0.0",
+    "description": "this is hallo repository",
+    "main": "index.js",
+    "scripts": {
+        "start": "nodemon app.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Mustafa-Soudi/hallo.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Mustafa-Soudi/hallo/issues"
+    },
+    "homepage": "https://github.com/Mustafa-Soudi/hallo#readme",
+    "dependencies": {
+        "dotenv": "^16.0.1",
+        "express": "^4.18.1",
+        "nodemon": "^2.0.16"
+    }
+}
